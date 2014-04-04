@@ -61,7 +61,7 @@ const String& String::operator+=( const String & rhs )
 
 const String& String::operator+=( const char *str )
 {
-		String rhs(str);
+        String rhs(str);
     int newLength = length( ) + rhs.length();
     if( newLength >= bufferLength )
     {
@@ -78,11 +78,11 @@ const String& String::operator+=( const char *str )
     return *this;
 }
 
-String operator+( const String & lhs, const String &rhs )
+const String operator+( const String & lhs, const String &rhs )
 {
-		String s(lhs);
-		s += rhs;
-		return s;
+        String s(lhs);
+        s += rhs;
+        return s;
 }
 
 char& String::operator[]( int k )
@@ -102,7 +102,7 @@ char String::operator[]( int k ) const
 std::ostream& operator<<( std::ostream& out, const String& str )
 {
     out << str.to_str();
-		return out;
+        return out;
 }
 
 std::istream& operator>>( std::istream & in, String& str )
